@@ -6,8 +6,18 @@ package main
 
 import (
 	"log"
+	rpe "rpe/internal"
 )
 
 func main() {
-	log.Println("Remote Provisioning Extension (RPE)")
+
+	//process flags
+	flags := rpe.NewFlags()
+	err := flags.ParseFlags()
+	if err != nil {
+		log.Fatalln(err.Error())
+	}
+
+	log.Println("DNS Suffix: ", flags.DNSSuffix, "RPE Port: ", flags.Port)
+	log.Println("Remote Provisioning Extension (RPE) starting ...")
 }
