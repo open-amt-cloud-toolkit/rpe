@@ -20,4 +20,6 @@ func main() {
 
 	log.Println("DNS Suffix: ", flags.DNSSuffix, "RPE Port: ", flags.Port)
 	log.Println("Remote Provisioning Extension (RPE) starting ...")
+
+	rpe.SendAck(flags.DNSSuffix)
 }
