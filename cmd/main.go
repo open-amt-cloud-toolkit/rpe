@@ -20,4 +20,9 @@ func main() {
 
 	log.Println("DNS Suffix: ", flags.DNSSuffix, "RPE Port: ", flags.Port)
 	log.Println("Remote Provisioning Extension (RPE) starting ...")
+
+	error := rpe.SendAck(flags.DNSSuffix)
+	if error != nil {
+		log.Println("Error sending Ack packet: ", error)
+	}
 }
