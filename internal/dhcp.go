@@ -320,10 +320,10 @@ func IntToByteArray(num int, bytes int) []byte {
 	switch bytes {
 	case 2:
 		byteArray = make([]byte, bytes)
-		binary.LittleEndian.PutUint16(byteArray, uint16(num))
+		binary.BigEndian.PutUint16(byteArray, uint16(num))
 	case 4:
 		byteArray = make([]byte, bytes)
-		binary.LittleEndian.PutUint32(byteArray, uint32(num))
+		binary.BigEndian.PutUint32(byteArray, uint32(num))
 	default:
 		log.Println("IntToByteArray() - Invalid byte count request: ", bytes)
 	}

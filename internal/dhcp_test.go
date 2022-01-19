@@ -46,7 +46,7 @@ func TestIntToByteArray(t *testing.T) {
 	assert.Equal(t, want, rcvd)
 }
 func Test2IntToByteArray(t *testing.T) {
-	want := []byte{0, 128}
+	want := []byte{128, 0}
 
 	rcvd := IntToByteArray(32768, 2)
 
